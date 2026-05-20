@@ -1,0 +1,936 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+    overflow-x:hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.custom-nav{
+    background:rgba(0,0,0,0.75);
+    backdrop-filter:blur(10px);
+    padding:15px 0;
+}
+
+.logo{
+    color:#0ef !important;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.nav-link{
+    color:white !important;
+    margin-left:18px;
+    transition:0.3s;
+    font-size:17px;
+}
+
+.nav-link:hover{
+    color:#0ef !important;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    align-items:center;
+}
+
+.highlight{
+    color:#0ef;
+}
+
+.hero h1{
+    font-size:65px;
+    line-height:1.2;
+}
+
+.hero p{
+    font-size:24px;
+    margin-top:15px;
+}
+
+/* SEARCH BOX */
+
+.search-box{
+    max-width:550px;
+}
+
+.location-select{
+    height:58px;
+    border-radius:30px;
+    padding-left:20px;
+    border:none;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-warning{
+    border-radius:30px;
+    font-weight:bold;
+    height:50px;
+    transition:0.3s;
+}
+
+.btn-warning:hover{
+    background:#0ef;
+    color:black;
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.login-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.login-container{
+    width:100%;
+    max-width:420px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.login-container input{
+    height:52px;
+    border-radius:30px;
+    padding-left:18px;
+    border:none;
+}
+
+.login-container input:focus{
+    border:2px solid #0ef;
+    box-shadow:none;
+}
+
+.login-container h1{
+    color:white;
+}
+
+/* ================= SIGNUP PAGE ================= */
+
+.signup_section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:20px;
+}
+
+.signup-box{
+    width:100%;
+    max-width:420px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.signup-box h2{
+    color:white;
+    font-weight:bold;
+}
+
+.signup-box input{
+    height:52px;
+    border-radius:30px;
+    padding-left:18px;
+    border:none;
+}
+
+.signup-box input:focus{
+    border:2px solid #0ef;
+    box-shadow:none;
+}
+
+/* ================= FOOD PAGE ================= */
+
+.food-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding-top:120px;
+    padding-bottom:50px;
+}
+
+.food-section h1{
+    font-size:45px;
+    font-weight:bold;
+}
+
+.food-card{
+    border:none;
+    border-radius:25px;
+    overflow:hidden;
+
+    transition:0.3s;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+.food-card:hover{
+    transform:translateY(-10px);
+}
+
+.card-img-top{
+    height:230px;
+    object-fit:cover;
+}
+
+.food-card .card-body{
+    padding:25px;
+}
+
+.food-card h5{
+    font-weight:bold;
+}
+
+.food-card p{
+    font-size:20px;
+    color:#ff9800;
+    font-weight:bold;
+}
+
+/* ================= SEARCH PAGE ================= */
+
+.search-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding-top:120px;
+    padding-bottom:50px;
+}
+
+.search-card{
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    transition:0.3s;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.search-card:hover{
+    transform:translateY(-10px);
+}
+
+.search-img-top{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.search-body{
+    background:white;
+    padding:25px;
+}
+
+.search-body h4{
+    font-weight:bold;
+}
+
+.search-body h5{
+    color:#ff9800;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.search-body input{
+    height:50px;
+    border-radius:30px;
+    padding-left:15px;
+}
+
+/* ================= CART PAGE ================= */
+
+.cart-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:40px 0;
+}
+
+.cart-box{
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    color:white;
+
+    text-align:center;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+
+    transition:0.3s;
+}
+
+.cart-box:hover{
+    transform:translateY(-5px);
+}
+
+.cart-box h2{
+    color:#0ef;
+    font-weight:bold;
+}
+
+.cart-box img{
+    width:250px;
+    height:200px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* ================= ORDER PAGE ================= */
+
+.order-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.order-box{
+    width:100%;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
+
+    padding:50px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    color:white;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.order-box h1{
+    color:#0ef;
+    font-size:42px;
+    font-weight:bold;
+}
+
+.order-box h4{
+    margin-top:20px;
+}
+
+/* Delivery Tracking */
+
+.tracking-box{
+    margin-top:30px;
+}
+
+.track-step{
+    background:rgba(255,255,255,0.1);
+    color:white;
+    padding:15px;
+    margin-top:15px;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:500;
+    backdrop-filter:blur(10px);
+}
+
+.track-step.active{
+    background:#0ef;
+    color:black;
+    font-weight:bold;
+}
+
+/* ================= MY ORDER PAGE ================= */
+
+.myorder-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding-top:120px;
+    padding-bottom:50px;
+}
+
+.myorder-card{
+    border:none;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    transition:0.3s;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.myorder-card:hover{
+    transform:translateY(-10px);
+}
+
+.myorder-img-top{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.myorder-card-body{
+    background:white;
+    padding:18px;
+}
+
+.myorder-card-body h4{
+    font-weight:bold;
+}
+
+.myorder-card-body h5{
+    color:#ff9800;
+    font-weight:bold;
+}
+
+/* Rating System */
+
+.rating-box{
+    background:#f8f9fa;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.rating-box h6{
+    font-weight:bold;
+    color:#111;
+}
+
+.stars{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+}
+
+.star{
+    font-size:35px;
+    cursor:pointer;
+    transition:0.3s;
+    color:#999;
+}
+
+.star:hover{
+    transform:scale(1.2);
+}
+
+/* ================= CONTACT PAGE ================= */
+
+.contact-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:40px 0;
+}
+
+.contact-box{
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+
+    color:white;
+}
+
+.contact-box h1{
+    color:#0ef;
+    font-weight:bold;
+}
+
+.contact-box input,
+.contact-box textarea{
+    border-radius:20px;
+    border:none;
+    padding:15px;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus{
+    box-shadow:none;
+    border:2px solid #0ef;
+}
+
+/* Comments Page */
+.comments-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding-top:120px;
+    padding-bottom:50px;
+}
+
+/* Heading */
+
+.comments-section h1{
+    font-size:45px;
+    font-weight:bold;
+    color:#0ef;
+}
+
+/* REVIEW FORM */
+
+.review-form{
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(12px);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Inputs */
+
+.review-form input,
+.review-form textarea{
+    width:100%;
+    border:none;
+    outline:none;
+    border-radius:20px;
+    padding:15px;
+    font-size:16px;
+}
+
+/* Focus Effect */
+
+.review-form input:focus,
+.review-form textarea:focus{
+    border:2px solid #0ef;
+    box-shadow:none;
+}
+
+/* Button */
+
+.review-form .btn{
+    height:50px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.review-form .btn:hover{
+    background:#0ef;
+    color:black;
+}
+
+/* REVIEW CARD */
+
+.review-card{
+    background:white;
+    border-radius:25px;
+    padding:25px;
+    height:100%;
+    transition:0.3s;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+.review-card:hover{
+    transform:translateY(-10px);
+}
+
+/* Name */
+
+.review-card h5{
+    font-weight:bold;
+    color:#111;
+    margin-bottom:10px;
+}
+
+/* Review Text */
+
+.review-card p{
+    color:#555;
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* Restraunt Page */
+.restraunt-section{
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.75)
+    ),
+    url('/static/images/food.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding-top:120px;
+    padding-bottom:50px;
+}
+
+.restraunt-section h1{
+    font-size:45px;
+    font-weight:bold;
+}
+
+.list-group{
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.list-group a{
+    background:white;
+    padding:18px 25px;
+    border-bottom:1px solid #ddd;
+    font-size:20px;
+    font-weight:500;
+    transition:0.3s;
+    display:block;
+}
+
+.list-group a:hover{
+    background:#0ef;
+    color:blac;
+    padding-left:35px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:20px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box .btn{
+        width:100%;
+    }
+
+    .location-select{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .login-container,
+    .signup-box,
+    .cart-box,
+    .order-box{
+        padding:25px;
+    }
+
+    .food-section h1{
+        font-size:34px;
+    }
+
+    .order-box h1{
+        font-size:30px;
+    }
+
+    .cart-box img{
+        width:100%;
+        height:220px;
+    }
+
+    .search-img-top,
+    .card-img-top,
+    .myorder-img-top{
+        height:220px;
+    }
+
+     .comments-section h1{
+
+        font-size:34px;
+    }
+
+    .review-form{
+
+        padding:25px;
+    }
+
+    .review-card{
+
+        padding:20px;
+    }
+}
+
+@media(max-width:576px){
+
+    .hero{
+        text-align:center;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:32px;
+        line-height:1.3;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .food-section h1,
+    .myorder-section h1{
+        font-size:28px;
+    }
+
+    .food-card,
+    .search-card,
+    .myorder-card{
+        margin:auto;
+    }
+
+    .myorder-img-top{
+        height: 140px;
+    }
+
+    .login-container,
+    .signup-box,
+    .cart-box,
+    .order-box{
+        width:100%;
+        padding:20px;
+        border-radius:20px;
+    }
+
+    .cart-box h2,
+    .order-box h1{
+        font-size:26px;
+    }
+
+    .cart-box h4,
+    .cart-box h3{
+        font-size:18px;
+    }
+
+    .btn-warning{
+        height:48px;
+        font-size:16px;
+    }
+
+    .search-body{
+        padding:18px;
+    }
+
+    .search-body h4{
+        font-size:22px;
+    }
+
+    .search-body h5{
+        font-size:20px;
+    }
+
+    .cart-box img,
+    .search-img-top,
+    .card-img-top,
+    .myorder-img-top{
+        height:200px;
+        width:100%;
+        object-fit:cover;
+    }
+
+    .navbar-nav{
+        margin-top:15px;
+        text-align:center;
+    }
+
+    .nav-link{
+        margin-left:0;
+        margin-top:10px;
+    }
+
+    .search-box{
+        width:100%;
+    }
+
+    .location-select{
+        width:100%;
+    }
+
+    .contact-box{
+        padding:25px;
+    }
+
+    .contact-box h1{
+        font-size:28px;
+    }
+
+     .comments-section h1{
+        font-size:28px;
+    }
+
+    .review-form{
+        padding:20px;
+    }
+
+    .review-card{
+        padding:18px;
+    }
+
+    .review-card h5{
+        font-size:20px;
+    }
+
+    .review-card p{
+        font-size:15px;
+    }
+
+    .restraunt-section h1{
+        font-size:30px;
+    }
+
+    .list-group a{
+        font-size:17px;
+        padding:15px 18px;
+    }
+
+}

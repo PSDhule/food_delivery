@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviw</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+
+<body>
+
+<section class="comments-section py-5">
+
+<div class="container">
+
+<h1 class="text-center text-white mb-5">
+    Customer Reviews
+</h1>
+
+<!-- Comment Form -->
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<form method="POST"
+      class="review-form bg-dark p-4 rounded">
+
+    {% csrf_token %}
+
+    <input type="text"
+           name="name"
+           placeholder="Enter Name"
+           class="form-control mb-3"
+           required>
+
+    <textarea
+        name="comment"
+        placeholder="Write Review"
+        class="form-control mb-3"
+        rows="4"
+        required></textarea>
+
+    <button type="submit"
+            class="btn btn-warning w-100">
+
+        Post Review
+
+    </button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- Display Reviews -->
+
+<div class="row mt-5">
+
+{% for comment in comments %}
+
+<div class="col-md-4 mb-4">
+
+<div class="review-card p-3">
+
+<h5>{{ comment.name }}</h5>
+
+<p>{{ comment.comment }}</p>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

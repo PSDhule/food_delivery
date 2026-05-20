@@ -1,0 +1,258 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Food Page</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{% static 'css/style2.css' %}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold logo">
+            FoodRush
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- Food Section -->
+<section class="food-section py-5">
+
+<div class="container">
+
+<h1 class="text-center text-white mb-5 mt-5">
+    Popular Food Items
+</h1>
+
+<div class="row">
+
+<!-- 1 Biryani -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/biryani.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Biryani</h5>
+
+<p>₹249</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 2 Burger -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/burger.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Burger</h5>
+
+<p>₹149</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 3 Fried Rice -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/fried_rice.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Fried Rice</h5>
+
+<p>₹180</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 4 Manchurian -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/manchurian.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Manchurian</h5>
+
+<p>₹120</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 5 Noodles -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/noodles.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Noodles</h5>
+
+<p>₹130</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 6 Pasta -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/pasta_img.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Pasta</h5>
+
+<p>₹179</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 7 Pizza -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/pizza.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Pizza</h5>
+
+<p>₹199</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+<!-- 8 Sandwich -->
+<div class="col-md-3 mb-4">
+
+<div class="card food-card">
+
+<img src="{% static 'images/sandwich.jpg' %}"
+     class="card-img-top">
+
+<div class="card-body text-center">
+
+<h5>Sandwich</h5>
+
+<p>₹100</p>
+
+<a href="/search/"
+   class="btn btn-warning">
+
+   Add To Cart
+
+</a>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</section>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

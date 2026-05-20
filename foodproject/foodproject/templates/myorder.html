@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>My Orders</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="{% static 'css/style2.css' %}">
+
+</head>
+
+<body>
+
+<section class="myorder-section py-5">
+
+<div class="container">
+
+<h1 class="text-center text-white mb-5">
+    My Orders
+</h1>
+
+<div class="row">
+
+{% for order in orders %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card myorder-card">
+
+<img src="{{ order.image.url }}"
+     class="myorder-img-top">
+
+<div class="myorder-card-body text-center">
+
+<h4>{{ order.food_name }}</h4>
+
+<h5>₹ {{ order.price }}</h5>
+
+<p>Quantity : {{ order.quantity }}</p>
+
+<h5>Total : ₹ {{ order.total }}</h5>
+
+<!-- Rating System -->
+
+<div class="rating-box mt-3">
+
+    <h6 class="mb-2">
+        Rate Your Food
+    </h6>
+
+    <div class="stars">
+
+    <span class="star"
+          onclick="rate(this, 1, {{ order.id }})">
+          {% if order.rating >= 1 %}★{% else %}☆{% endif %}
+    </span>
+
+    <span class="star"
+          onclick="rate(this, 2, {{ order.id }})">
+          {% if order.rating >= 2 %}★{% else %}☆{% endif %}
+    </span>
+
+    <span class="star"
+          onclick="rate(this, 3, {{ order.id }})">
+          {% if order.rating >= 3 %}★{% else %}☆{% endif %}
+    </span>
+
+    <span class="star"
+          onclick="rate(this, 4, {{ order.id }})">
+          {% if order.rating >= 4 %}★{% else %}☆{% endif %}
+    </span>
+
+    <span class="star"
+          onclick="rate(this, 5, {{ order.id }})">
+          {% if order.rating >= 5 %}★{% else %}☆{% endif %}
+    </span>
+
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+function rate(clickedStar, rating, orderId){
+
+    let stars =
+    clickedStar.parentElement.children;
+
+    for(let i = 0; i < stars.length; i++){
+
+        if(i < rating){
+
+            stars[i].innerHTML = "★";
+            stars[i].style.color = "gold";
+
+        }
+
+        else{
+
+            stars[i].innerHTML = "☆";
+            stars[i].style.color = "#999";
+
+        }
+    }
+
+    fetch(`/save-rating/?order_id=${orderId}&rating=${rating}`)
+}
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Search Food</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold logo">
+    FoodRush
+</a>
+
+<form class="d-flex ms-auto" method="GET">
+
+<input
+class="form-control me-2"
+type="search"
+name="search"
+placeholder="Search Food..."
+>
+
+<button class="btn btn-warning">
+    Search
+</button>
+
+</form>
+
+</div>
+
+</nav>
+
+<!-- Search Food -->
+<section class="search-section py-5">
+
+<div class="container">
+
+<div class="row mt-5 pt-5">
+
+{% for food in foods %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card search-card">
+
+<img src="{{ food.image.url }}"
+     class="search-img-top">
+
+<div class="search-body text-center">
+
+<h4>{{ food.name }}</h4>
+
+<h5>₹ {{ food.price }}</h5>
+
+<!-- FORM START -->
+<form action="/cart/" method="GET">
+
+    <input
+    type="hidden"
+    name="food_name"
+    value="{{ food.name }}">
+
+    <input
+    type="hidden"
+    name="price"
+    value="{{ food.price }}">
+
+    <input
+    type="number"
+    name="quantity"
+    class="form-control mt-3"
+    value="1"
+    min="1">
+
+    <button type="submit"
+            class="btn btn-warning w-100 mt-3">
+
+        Add To Cart
+
+    </button>
+
+</form>
+<!-- FORM END -->
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
