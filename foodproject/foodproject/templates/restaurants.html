@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %}Restaurants - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- PAGE HEADER -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+            Restaurants
+        </h1>
+
+        <p class="text-muted">
+            Discover restaurants around you
+        </p>
+
+    </div>
+
+
+    <!-- RESTAURANT LIST -->
+
+    <div class="row g-4">
+
+        {% for restaurant in restaurants %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <!-- CLICK RESTAURANT -->
+
+                <a
+                    href="{% url 'search' %}?restaurant={{ restaurant.id }}"
+                    class="text-decoration-none"
+                >
+
+                    <div class="card restaurant-card h-100">
+
+                        {% if restaurant.image %}
+
+                            <img
+                                src="{{ restaurant.image.url }}"
+                                class="card-img-top"
+                                alt="{{ restaurant.name }}"
+                                style="height:230px; object-fit:cover;"
+                            >
+
+                        {% else %}
+
+                            <div
+                                class="d-flex align-items-center justify-content-center bg-light"
+                                style="height:230px;"
+                            >
+                                <span class="text-muted">
+                                    No Image
+                                </span>
+                            </div>
+
+                        {% endif %}
+
+
+                        <div class="card-body">
+
+                            <h4 class="fw-bold">
+                                {{ restaurant.name }}
+                            </h4>
+
+
+                            <p class="mb-2">
+                                📍 {{ restaurant.location }}
+                            </p>
+
+
+                            <p class="restaurant-rating mb-2">
+                                ⭐ {{ restaurant.rating }}
+                            </p>
+
+
+                            {% if restaurant.description %}
+
+                                <p class="text-muted">
+                                    {{ restaurant.description }}
+                                </p>
+
+                            {% else %}
+
+                                <p class="text-muted">
+                                    Delicious food available here.
+                                </p>
+
+                            {% endif %}
+
+
+                            <span class="btn btn-warning mt-2">
+                                View Food
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        {% empty %}
+
+            <div class="col-12 text-center">
+
+                <div class="py-5">
+
+                    <h4>
+                        No restaurants available.
+                    </h4>
+
+                    <p class="text-muted">
+                        Please check again later.
+                    </p>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

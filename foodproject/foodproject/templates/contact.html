@@ -1,132 +1,58 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% block title %}Contact - FoodRush{% endblock %}
 
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+{% block content %}
 
-<title>Contact Us</title>
+<div class="container py-5">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet">
+    <div class="card shadow mx-auto"
+         style="max-width:700px;">
 
-<link rel="stylesheet"
-      href="{% static 'css/style2.css' %}">
+        <div class="card-body p-5">
 
-</head>
+            <h2 class="fw-bold text-center mb-4">
+                Contact Us
+            </h2>
 
-<body>
+            <form method="POST">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+                {% csrf_token %}
 
-<div class="container">
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control mb-3"
+                    placeholder="Your Name"
+                    required>
 
-<a class="navbar-brand fw-bold logo">
-    FoodRush
-</a>
+                <input
+                    type="email"
+                    name="email"
+                    class="form-control mb-3"
+                    placeholder="Your Email"
+                    required>
 
-<ul class="navbar-nav ms-auto">
+                <textarea
+                    name="message"
+                    class="form-control mb-3"
+                    rows="5"
+                    placeholder="Your Message"
+                    required></textarea>
 
-<li class="nav-item">
+                <button
+                    class="btn btn-dark w-100">
 
-<a href="/"
-   class="nav-link">
+                    Send Message
 
-   Home
+                </button>
 
-</a>
+            </form>
 
-</li>
+        </div>
 
-<li class="nav-item">
-
-<a href="/myorder/"
-   class="nav-link">
-
-   My Orders
-
-</a>
-
-</li>
-
-<li class="nav-item">
-
-<a href="/contact/"
-   class="nav-link active">
-
-   Contact
-
-</a>
-
-</li>
-
-</ul>
+    </div>
 
 </div>
 
-</nav>
-
-<!-- Contact Section -->
-
-<section class="contact-section">
-
-<div class="container">
-
-<div class="row justify-content-center align-items-center min-vh-100">
-
-<div class="col-md-6">
-
-<div class="contact-box">
-
-<h1 class="text-center mb-4">
-    Contact Us
-</h1>
-
-<form method="POST">
-
-{% csrf_token %}
-
-<input type="text"
-       name="name"
-       placeholder="Enter Your Name"
-       class="form-control mb-3"
-       required>
-
-<input type="email"
-       name="email"
-       placeholder="Enter Your Email"
-       class="form-control mb-3"
-       required>
-
-<textarea class="form-control mb-3"
-          rows="5"
-          name="message"
-          placeholder="Enter Message"
-          required></textarea>
-
-<button class="btn btn-warning w-100">
-    Send Message
-</button>
-
-</form>
-
-<p class="text-center text-success mt-3">
-    {{ message }}
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</body>
-</html>
+{% endblock %}

@@ -1,90 +1,73 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Reviw</title>
+{% extends 'base.html' %}
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+{% block title %}Reviews - FoodRush{% endblock %}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
-</head>
+{% block content %}
 
-<body>
+<div class="container py-5">
 
-<section class="comments-section py-5">
+    <h1 class="fw-bold text-center mb-5">
+        FoodRush Community Reviews
+    </h1>
 
-<div class="container">
+    <div class="card shadow-sm mb-5">
 
-<h1 class="text-center text-white mb-5">
-    Customer Reviews
-</h1>
+        <div class="card-body">
 
-<!-- Comment Form -->
+            <form method="POST">
 
-<div class="row justify-content-center">
+                {% csrf_token %}
 
-<div class="col-md-6">
+                <input
+                    type="text"
+                    name="name"
+                    class="form-control mb-3"
+                    placeholder="Your Name"
+                    required>
 
-<form method="POST"
-      class="review-form bg-dark p-4 rounded">
+                <textarea
+                    name="comment"
+                    class="form-control mb-3"
+                    placeholder="Write your experience..."
+                    required></textarea>
 
-    {% csrf_token %}
+                <button class="btn btn-dark">
+                    Post Review
+                </button>
 
-    <input type="text"
-           name="name"
-           placeholder="Enter Name"
-           class="form-control mb-3"
-           required>
+            </form>
 
-    <textarea
-        name="comment"
-        placeholder="Write Review"
-        class="form-control mb-3"
-        rows="4"
-        required></textarea>
+        </div>
 
-    <button type="submit"
-            class="btn btn-warning w-100">
+    </div>
 
-        Post Review
 
-    </button>
+    {% for item in comments %}
 
-</form>
+        <div class="card mb-3">
 
-</div>
+            <div class="card-body">
 
-</div>
+                <h5>
+                    {{ item.name }}
+                </h5>
 
-<!-- Display Reviews -->
+                <p>
+                    {{ item.comment }}
+                </p>
 
-<div class="row mt-5">
+            </div>
 
-{% for comment in comments %}
+        </div>
 
-<div class="col-md-4 mb-4">
+    {% empty %}
 
-<div class="review-card p-3">
+        <p class="text-center">
+            No reviews yet.
+        </p>
 
-<h5>{{ comment.name }}</h5>
-
-<p>{{ comment.comment }}</p>
+    {% endfor %}
 
 </div>
 
-</div>
-
-{% endfor %}
-
-</div>
-
-</div>
-
-</section>
-
-</body>
-</html>
+{% endblock %}

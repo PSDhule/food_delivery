@@ -30,14 +30,14 @@
           <a class="nav-link active">Home</a>
         </li>
         <li class="nav-item">
-          <a href="/restraunt/"
+          <a href="/restaurants/"
             class="nav-link">
             
             Restaurants
           </a>
         </li>
         <li class="nav-item">
-          <a href="/myorder/"
+          <a href="/my_orders/"
             class="nav-link">
 
             My Orders
@@ -63,7 +63,7 @@
 </li>
       </ul>
 
-        <a href="/login/"
+        <a href="{% url 'login' %}"
           class="btn btn-warning ms-3 px-4">
 
           Login
@@ -88,36 +88,35 @@
         </p>
 
         <!-- FORM -->
-        <form action="/login/"
-              method="GET"
-              class="d-flex mt-4 search-box">
+      <form
+        method="GET"
+        action="{% url 'food' %}"
+        class="d-flex mt-4 search-box">
 
-          <select class="form-control me-2 location-select"
-                  name="location"
-                  required>
+        <select
+          class="form-control me-2 location-select"
+          name="location" required>
 
-            <option value="" selected disabled>
-              Enter Location
-            </option>
+          <option value="" selected disabled>
+            Enter Location
+          </option>
 
-            <option>Pune</option>
-            <option>Mumbai</option>
-            <option>Nagpur</option>
-            <option>Nashik</option>
-            <option>Delhi</option>
-            <option>Bangalore</option>
-            <option>Hyderabad</option>
+          <option class="location" value="Pune">Pune</option>
+          <option class="location" value="Mumbai">Mumbai</option>
+          <option class="location" value="Nagpur">Nagpur</option>
+          <option class="location" value="Nashik">Nashik</option>
+          <option class="location" value="Delhi">Delhi</option>
+          <option class="location" value="Bangalore">Bangalore</option>
+          <option class="location" value="Hyderabad">Hyderabad</option>
+        </select>
 
-          </select>
+        <button
+        type="submit"
+        class="btn btn-warning mt-2 px-4">
+          Find Food
+        </button>
 
-          <button type="submit"
-                  class="btn btn-warning mt-2 px-4">
-
-            Find Food
-
-          </button>
-
-        </form>
+      </form>
 
       </div>
     </div>

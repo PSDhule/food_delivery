@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Customers - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="admin-page-title mb-4">
+        Customer Management
+    </h1>
+
+    <div class="table-responsive admin-table-wrapper">
+        
+        <table class="table admin-table">
+
+            <thead class="table-dark">
+
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Joined</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                {% for customer in customers %}
+
+                    <tr>
+
+                        <td>
+                            {{ customer.username }}
+                        </td>
+
+                        <td>
+                            {{ customer.email }}
+                        </td>
+
+                        <td>
+                            {{ customer.date_joined }}
+                        </td>
+
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="admin-page-title mb-5">
+        Admin Dashboard
+    </h1>
+
+    <div class="row g-4">
+
+        <div class="col-md-3">
+
+            <div class="card admin-stat-card text-center">
+
+                <div class="card-body">
+
+                    <h6>
+                        Total Foods
+                    </h6>
+
+                    <h2>
+                        {{ total_foods }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>
+                        Restaurants
+                    </h6>
+
+                    <h2>
+                        {{ total_restaurants }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>
+                        Customers
+                    </h6>
+
+                    <h2>
+                        {{ total_customers }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-3">
+
+            <div class="card shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>
+                        Orders
+                    </h6>
+
+                    <h2>
+                        {{ total_orders }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card admin-revenue-card mt-5">
+
+        <div class="card-body">
+
+            <h4>
+                Delivered Revenue
+            </h4>
+
+            <h2 class="text-success">
+                ₹{{ total_revenue }}
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="mt-4">
+
+        <a
+            href="{% url 'admin_orders' %}"
+            class="btn btn-dark">
+
+            Manage Orders
+
+        </a>
+
+        <a
+            href="{% url 'admin_customers' %}"
+            class="btn btn-outline-dark">
+
+            Manage Customers
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

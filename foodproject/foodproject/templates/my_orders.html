@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}My Orders - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h1 class="fw-bold mb-4">
+        My Orders
+    </h1>
+
+    {% for order in orders %}
+
+        <div class="card my-orders-card mb-4">
+
+            <div class="card-body">
+
+                <div class="row align-items-center">
+
+                    <div class="col-md-3">
+
+                        <small class="text-muted">
+                            Order Number
+                        </small>
+
+                        <h6>
+                            {{ order.order_number }}
+                        </h6>
+
+                    </div>
+
+
+                    <div class="col-md-2">
+
+                        <small class="text-muted">
+                            Total
+                        </small>
+
+                        <h5>
+                            ₹{{ order.total }}
+                        </h5>
+
+                    </div>
+
+
+                    <div class="col-md-2">
+
+                        <small class="text-muted">
+                            Payment
+                        </small>
+
+                        <p>
+                            {{ order.payment_method }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-2">
+
+                        <small class="text-muted">
+                            Status
+                        </small>
+
+                        <p>
+                            <span class="badge order-status">
+                                {{ order.status }}
+                            </span>
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-md-3 text-end">
+
+                        <a
+                            href="{% url 'order_detail' order.id %}"
+                            class="btn btn-dark">
+
+                            View Order
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% empty %}
+
+        <div class="text-center py-5">
+
+            <h3>
+                No orders yet.
+            </h3>
+
+            <a
+                href="{% url 'food' %}"
+                class="btn btn-dark mt-3">
+
+                Order Food
+
+            </a>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

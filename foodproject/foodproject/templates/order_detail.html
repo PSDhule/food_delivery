@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Details - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h1 class="fw-bold">
+                Order Details
+            </h1>
+
+            <p class="text-muted">
+                {{ order.order_number }}
+            </p>
+
+        </div>
+
+        <span class="badge bg-primary fs-6">
+            {{ order.status }}
+        </span>
+
+    </div>
+
+
+    <!-- ================= ORDERED ITEMS ================= -->
+
+    <div class="card order-detail-card mb-4">
+
+        <div class="card-body">
+
+            <h4>
+                Ordered Items
+            </h4>
+
+            {% for item in order.items.all %}
+
+                <div class="row align-items-center order-item-row py-3">
+
+                    <div class="col-md-6">
+
+                        {% if item.food %}
+
+                            <strong>
+                                {{ item.food.name }}
+                            </strong>
+
+                        {% else %}
+
+                            <strong>
+                                Food Item
+                            </strong>
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="col-md-2">
+                        ₹{{ item.price }}
+                    </div>
+
+
+                    <div class="col-md-2">
+                        × {{ item.quantity }}
+                    </div>
+
+
+                    <div class="col-md-2">
+                        ₹{{ item.total }}
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SPECIAL INSTRUCTIONS ================= -->
+
+    {% if order.special_instruction %}
+
+        <div class="card order-detail-card mb-4">
+
+            <div class="card-body">
+
+                <h4 class="mb-3">
+                    Special Instructions
+                </h4>
+
+                <div class="alert alert-light border mb-0">
+
+                    <i class="bi bi-chat-left-text me-2"></i>
+
+                    {{ order.special_instruction }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% endif %}
+
+
+    <!-- ================= DELIVERY INFORMATION ================= -->
+
+    <div class="card order-detail-card">
+
+        <div class="card-body">
+
+            <h4>
+                Delivery Information
+            </h4>
+
+            <p>
+                {{ order.address }}
+            </p>
+
+            <hr>
+
+
+            <div class="d-flex justify-content-between">
+
+                <strong>
+                    Total
+                </strong>
+
+                <strong>
+                    ₹{{ order.total }}
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

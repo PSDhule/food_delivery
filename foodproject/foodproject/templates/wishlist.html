@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %}My Wishlist - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- PAGE HEADER -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+            ❤️ My Wishlist
+        </h1>
+
+        <p class="text-muted">
+            Your favourite food items
+        </p>
+
+    </div>
+
+
+    <!-- WISHLIST ITEMS -->
+
+    <div class="row g-4">
+
+        {% for item in wishlist_items %}
+
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="card wishlist-card h-100">
+
+                    <!-- FOOD IMAGE -->
+
+                    <a href="{% url 'food_detail' item.food.id %}">
+
+                        {% if item.food.image %}
+
+                            <img
+                                src="{{ item.food.image.url }}"
+                                class="card-img-top wishlist-image"
+                                alt="{{ item.food.name }}">
+
+                        {% else %}
+
+                            <div class="wishlist-no-image">
+                                🍽️
+                            </div>
+
+                        {% endif %}
+
+                    </a>
+
+
+                    <!-- FOOD DETAILS -->
+
+                    <div class="card-body">
+
+                        <h5 class="wishlist-food-name">
+                            {{ item.food.name }}
+                        </h5>
+
+                        <p class="wishlist-category">
+                            {{ item.food.category }}
+                        </p>
+
+                        <h5 class="wishlist-price">
+                            ₹{{ item.food.price }}
+                        </h5>
+
+                    </div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="card-footer wishlist-footer">
+
+                        <div class="d-grid gap-2">
+
+                            <!-- ORDER NOW -->
+
+                            <a
+                                href="{% url 'add_to_cart' item.food.id %}"
+                                class="btn btn-dark">
+
+                                🛒 Order Now
+
+                            </a>
+
+
+                            <!-- REMOVE -->
+
+                            <a
+                                href="{% url 'toggle_wishlist' item.food.id %}"
+                                class="btn btn-outline-danger">
+
+                                ❤️ Remove
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <!-- EMPTY WISHLIST -->
+
+            <div class="col-12">
+
+                <div class="wishlist-empty text-center">
+
+                    <div class="wishlist-empty-icon">
+                        ❤️
+                    </div>
+
+                    <h3>
+                        Your Wishlist is Empty
+                    </h3>
+
+                    <p>
+                        Add your favourite food items to your wishlist.
+                    </p>
+
+                    <a
+                        href="{% url 'food' %}"
+                        class="btn btn-dark mt-3">
+
+                        🍽️ Explore Food
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

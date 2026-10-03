@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Reviews - FoodRush{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+            Customer Reviews
+        </h1>
+
+    </div>
+
+    <div class="row g-4">
+
+        {% for review in reviews %}
+
+            <div class="col-md-6">
+
+                <div class="card review-card h-100">
+
+                    <div class="card-body">
+
+                        <h5>
+                            {{ review.user.username }}
+                        </h5>
+
+                        <p class="review-rating">
+                            ⭐ {{ review.rating }}/5
+                        </p>
+
+                        <p>
+                            {{ review.comment }}
+                        </p>
+
+                        <small class="text-muted">
+                            {{ review.food.name }}
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <div class="col-12 text-center">
+
+                <p>
+                    No reviews available.
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
