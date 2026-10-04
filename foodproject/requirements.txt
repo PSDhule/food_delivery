@@ -1,0 +1,16 @@
+asgiref==3.11.1
+colorama==0.4.6
+dj-database-url==3.1.2
+Django==6.0.3
+gunicorn==26.2.0
+mysqlclient==2.2.8
+numpy==2.4.2
+opencv-python==4.13.0.92
+pillow==12.1.1
+psycopg2-binary==2.9.13
+PyMySQL==1.1.2
+python-dotenv==1.2.4
+qrcode==8.2
+sqlparse==0.5.5
+tzdata==2025.3
+whitenoise==6.12.0
