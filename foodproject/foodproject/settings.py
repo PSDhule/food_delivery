@@ -143,10 +143,12 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'foodproject' / 'static',
+    BASE_DIR / 'media',
+
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = '/static/media/'
+MEDIA_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
